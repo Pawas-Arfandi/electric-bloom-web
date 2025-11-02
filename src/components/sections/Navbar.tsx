@@ -82,9 +82,11 @@ const Navbar = () => {
 	return (
 		<nav
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+				// If scrolled -> show scrolled background on all sizes.
+				// If not scrolled -> show a solid background on small screens, but keep desktop transparent.
 				isScrolled
 					? "bg-background/80 backdrop-blur-lg shadow-lg border-b border-border"
-					: "bg-transparent"
+					: "bg-background/95 lg:bg-transparent"
 			}`}
 		>
 			<div className="container mx-auto px-4">
@@ -98,21 +100,16 @@ const Navbar = () => {
 						}}
 						className="flex items-center gap-2 group cursor-pointer"
 					>
+						{/* icon: colored on mobile, keeps readable desktop color */}
 						<div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary transition-smooth">
 							<Code2
-								className={`w-6 h-6 ${
-									isScrolled
-										? "text-primary"
-										: "text-primary-foreground"
-								} group-hover:text-primary-foreground`}
+								className={`w-6 h-6 text-primary group-hover:text-primary-foreground lg:${isScrolled ? "text-primary" : "text-primary-foreground"}`}
 							/>
 						</div>
+
+						{/* logo text: colored on mobile; desktop keeps original behavior */}
 						<span
-							className={`text-xl md:text-2xl font-bold transition-smooth ${
-								isScrolled
-									? "text-foreground"
-									: "text-primary-foreground"
-							}`}
+							className={`text-xl md:text-2xl font-bold transition-smooth text-primary lg:${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
 						>
 							WebCraftIDN
 						</span>
@@ -174,11 +171,8 @@ const Navbar = () => {
 							<Button
 								variant="ghost"
 								size="icon"
-								className={
-									isScrolled
-										? "text-foreground"
-										: "text-primary-foreground"
-								}
+								// mobile: black; desktop: keep foreground color. hover stays black on mobile.
+								className="text-black lg:text-primary-foreground hover:text-black transition-colors"
 							>
 								{mobileOpen ? (
 									<X className="w-6 h-6" />
@@ -186,7 +180,7 @@ const Navbar = () => {
 									<Menu className="w-6 h-6" />
 								)}
 							</Button>
-						</SheetTrigger>
+                         </SheetTrigger>
 						<SheetContent
 							side="right"
 							className="w-[300px] bg-card/95 backdrop-blur-lg"
