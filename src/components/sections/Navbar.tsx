@@ -55,8 +55,22 @@ const Navbar = () => {
 	}, []);
 
 	const scrollToSection = (href: string) => {
-		// Try scroll to element; if not found (e.g. #home not present), scroll to top
-		const element = href === "#" ? null : document.querySelector(href);
+		// For the Get Started target, jump instantly (no smooth scroll)
+		const instantTargets = ["#get-started"];
+		const element = document.querySelector(href);
+		if (instantTargets.includes(href)) {
+			if (element) {
+				// instant jump
+				(element as Element).scrollIntoView({ behavior: "auto" });
+			} else if (typeof window !== "undefined") {
+				// fallback: set hash (causes instant jump)
+				window.location.hash = href;
+			}
+			setMobileOpen(false);
+			return;
+		}
+
+		// default: smooth scroll for other links
 		if (element) {
 			(element as Element).scrollIntoView({ behavior: "smooth" });
 		} else {
@@ -100,7 +114,7 @@ const Navbar = () => {
 									: "text-primary-foreground"
 							}`}
 						>
-							WebCraft
+							WebCraftIDN
 						</span>
 					</a>
 
@@ -116,9 +130,7 @@ const Navbar = () => {
 								}}
 								className={`text-sm font-medium transition-smooth relative group ${
 									activeSection === link.href
-										? link.href === "#home"
-											? "text-white"
-											: "text-primary"
+										? `${link.href === "#home" ? "text-white" : "text-primary"} transform scale-105 transition-transform duration-200`
 										: isScrolled
 										? "text-foreground hover:text-primary"
 										: "text-primary-foreground hover:text-primary-foreground/80"
@@ -196,9 +208,7 @@ const Navbar = () => {
 										}}
 										className={`text-lg font-medium transition-smooth py-2 ${
 											activeSection === link.href
-												? link.href === "#home"
-													? "text-white"
-													: "text-primary"
+												? `${link.href === "#home" ? "text-white" : "text-primary"} transform scale-105 transition-transform duration-200`
 												: "text-foreground hover:text-primary"
 										}`}
 									>

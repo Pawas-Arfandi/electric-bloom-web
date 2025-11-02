@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="#" 
+                href="https://www.instagram.com/webcraft_digital_craft" 
                 className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary transition-smooth"
                 aria-label="Instagram"
               >
