@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Afriyani",
     role: "Owner of Bengkel King Farel",
-    content: "WebCraft transformed our online presence with a stunning website that perfectly captures our brand. The team was professional, responsive, and delivered beyond expectations.",
+    content: "Puas dengan layanan yang diberikan WebCraft, pengerjaannya cepat dan sesuai dengan yang diharapkan.",
     rating: 5,
     company: "Car repair shop"
   },
