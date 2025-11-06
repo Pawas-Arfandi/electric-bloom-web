@@ -1,26 +1,22 @@
 # WebCraftIDN
 
-WebCraftIDN adalah sebuah proyek website (atau aplikasi web) yang dikembangkan menggunakan [sebutkan bahasa/framework/teknologi, misalnya “PHP + Laravel”, “Node.js + Express”, “React”] untuk [deskripsikan secara singkat fungsi utama: misalnya “platform e‑commerce lokal”, “portofolio digital”, “blog komunitas craft Indonesia”].
+WebCraftIDN adalah sebuah proyek website bisnis yang dikembangkan menggunakan **React** dan **Tailwind CSS**. Proyek ini menampilkan portofolio bisnis, produk, dan informasi terkait tanpa backend atau database.
 
 ## 📋 Fitur Utama
-- Fitur 1: [contoh: manajemen produk, keranjang belanja]
-- Fitur 2: [contoh: sistem pembayaran]
-- Fitur 3: [contoh: panel admin]
-- … (tambahkan sesuai kebutuhan)
+- Halaman beranda dengan informasi bisnis dan hero section
+- Galeri produk/portofolio
+- Halaman kontak/form (opsional, tanpa penyimpanan database)
+- Responsif untuk desktop dan mobile
+- Animasi sederhana menggunakan CSS/Tailwind
 
 ## ✅ Prasyarat
-Sebelum menjalankan proyek ini secara lokal, pastikan Anda sudah memiliki:
-- [Contoh] Node.js versi `>= 14.x` atau sesuai kebutuhan  
-- [Contoh] npm atau yarn  
-- [Contoh] PHP versi `>= 7.4` dan extensi yang diperlukan  
-- [Contoh] Composer (jika menggunakan PHP)  
-- [Contoh] MySQL / MariaDB atau database lain yang didukung  
-- [Contoh] Git untuk version control  
-- [Contoh] (Opsional) Docker / Docker Compose jika ingin jalankan dengan container  
+Sebelum menjalankan proyek secara lokal, pastikan Anda memiliki:
+- Node.js versi `>=14.x`
+- npm atau yarn
 
 ## 🛠️ Instalasi & Setup Lokal
 
-1. Clone repository  
-   ```bash
-   git clone https://github.com/Pawas-Arfandi/WebCraftIDN.git
-   cd WebCraftIDN
+1. Clone repository:
+```bash
+git clone https://github.com/Pawas-Arfandi/WebCraftIDN.git
+cd WebCraftIDN
