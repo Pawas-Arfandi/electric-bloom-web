@@ -41,10 +41,6 @@ Tujuannya:
 ## 📦 Instalasi & Jalankan Proyek
 
 1. **Clone repository**
-```bash
 git clone https://github.com/Pawas-Arfandi/WebCraftIDN.git
 cd WebCraftIDN
 
----
-
-## 📦 Test
